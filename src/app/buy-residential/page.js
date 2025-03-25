@@ -2,7 +2,7 @@ import BuyResidentialsPage from "@/template/BuyResidentialsPage";
 
 async function BuyResidentials({ searchParams }) {
   // بهتر است در کامپوننت های سرورساید از ای پی آی روت استفاده نکنیم(این مورد حالت تمرینی دارد)
-  const res = await fetch("http://localhost:3000/api/profile", {
+  const res = await fetch("http://realstate-cumstein.vercel.app/api/profile", {
     cache: "no-store",
   });
   const data = await res.json();
