@@ -1,10 +1,12 @@
 import BuyResidentialsPage from "@/template/BuyResidentialsPage";
 
 async function BuyResidentials({ searchParams }) {
-  // بهتر است در کامپوننت های سرورساید از ای پی آی روت استفاده نکنیم(این مورد حالت تمرینی دارد)
   const res = await fetch("/api/profile", {
     cache: "no-store",
   });
+  if (!res.ok) {
+    throw new Error("HTTP Error! status: ${res.status}");
+  }
   const data = await res.json();
 
   if (data.error) return <h3>مشکلی پیش آمده است</h3>;
