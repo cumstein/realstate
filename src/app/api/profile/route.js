@@ -11,10 +11,12 @@ export async function GET() {
 
     const profiles = await Profile.find({ published: true }).select("-userId");
 
-    return NextResponse.json({
-      data: profiles,
-      status: 200,
-    });
+    return NextResponse.json(
+      {
+        data: profiles,
+      },
+      { status: 200 }
+    );
   } catch (err) {
     console.log("API Error", err);
     return NextResponse.json(
