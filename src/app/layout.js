@@ -1,14 +1,12 @@
+import NextAuthProvider from "@/providers/NextAuthProvider";
+import Layout from "@/layout/Layout";
+import { yekan } from "@/utils/fonts";
 import "./globals.css";
 
-import { yekan } from "@/utils/fonts";
-
-import Layout from "@/layout/Layout";
-import NextAuthProvider from "@/providers/NextAuthProvider";
-
 export const metadata = {
-  title: "املاک آنلاین",
-  description: "خرید و فروش ملک",
-  icons: {icon: "./favicon.ico"}
+  title: "املاک سایت",
+  description: "سایت خرید و فروش املاک",
+  icons: { icon: "./favicon.ico" },
 };
 
 export default function RootLayout({ children }) {

@@ -11,8 +11,8 @@ function HomePage() {
         <div className={styles.desc}>
           <h1>سامانه خرید و اجاره ملک</h1>
           <ul>
-            {services.map((i, index) => (
-              <li key={index}>
+            {services.map((i) => (
+              <li key={i}>
                 <FiCircle />
                 <span>{i}</span>
               </li>
@@ -21,15 +21,15 @@ function HomePage() {
         </div>
       </div>
       <div className={styles.categories}>
-        {Object.keys(categories).map((i, index) => (
-          <CategoryCard title={categories[i]} name={i} key={index} />
+        {Object.keys(categories).map((i) => (
+          <CategoryCard title={categories[i]} name={i} key={i} />
         ))}
       </div>
       <div className={styles.city}>
         <h3>شهر های پر بازدید</h3>
         <ul>
-          {cities.map((i, index) => (
-            <li key={index}>
+          {cities.map((i) => (
+            <li key={i}>
               <FaCity />
               <span>{i}</span>
             </li>

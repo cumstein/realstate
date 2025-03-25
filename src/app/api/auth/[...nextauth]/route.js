@@ -13,17 +13,20 @@ export const authOptions = {
 
         try {
           await connectDB();
-        } catch (err) {
-          throw new Error("مشکلی در سرور رخ داده است.");
+        } catch (error) {
+          throw new Error("مشکلی در سرور رخ داده است");
         }
+
         if (!email || !password)
-          throw new Error("لطفا اطلاعات معتبر وارد کنید.");
+          throw new Error("لطفا اطلاعات معتبر وارد کنید");
 
         const user = await User.findOne({ email });
-        if (!user) throw new Error("لظفا ابتدا حساب کاربری ایجاد کنید.");
+
+        if (!user) throw new Error("لطفا ابتدا حساب کاربری ایجاد کنید");
+
         const isValid = await verifyPassword(password, user.password);
 
-        if (!isValid) throw new Error("ایمیل یا رمز عبور اشتباه است.");
+        if (!isValid) throw new Error("ایمیل یا رمز عبور اشتباه است");
 
         return { email };
       },

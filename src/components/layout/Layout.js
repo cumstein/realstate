@@ -3,6 +3,7 @@ import Header from "@/layout/Header";
 
 function Layout({ children }) {
   const style = { minHeight: "700px" };
+
   return (
     <>
       <Header />
@@ -11,4 +12,5 @@ function Layout({ children }) {
     </>
   );
 }
+
 export default Layout;
