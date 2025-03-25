@@ -5,6 +5,7 @@ async function BuyResidentials({ searchParams }) {
     cache: "no-store",
   });
   const data = await res.json();
+  res.headers["content-type"] = "text/html";
 
   if (data.error) return <h3>مشکلی پیش آمده است</h3>;
 
