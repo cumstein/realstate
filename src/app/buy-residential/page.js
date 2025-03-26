@@ -1,10 +1,12 @@
 import BuyResidentialsPage from "@/template/BuyResidentialsPage";
 
 async function BuyResidentials({ searchParams }) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile`, {
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile`, {
+  //   cache: "no-store",
+  // });
+  const res = await fetch("https://realstate-cumstein.vercel.app/api/profile", {
     cache: "no-store",
   });
-  res.headers["content-type"] = "text/html";
   const data = await res.json();
 
   if (data.error) return <h3>مشکلی پیش آمده است</h3>;
