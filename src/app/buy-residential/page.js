@@ -1,12 +1,13 @@
 import BuyResidentialsPage from "@/template/BuyResidentialsPage";
 
 async function BuyResidentials({ searchParams }) {
-  // const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile`, {
-  //   cache: "no-store",
-  // });
-  const res = await fetch("https://realstate-cumstein.vercel.app/api/profile", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/profile`, {
     cache: "no-store",
   });
+  if (!res.ok) {
+    throw new Error("Failed to fetch properties");
+  }
+
   const data = await res.json();
 
   if (data.error) return <h3>مشکلی پیش آمده است</h3>;
