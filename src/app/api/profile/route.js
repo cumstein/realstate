@@ -10,6 +10,7 @@ export async function GET() {
     await connectDB();
 
     const profiles = await Profile.find({ published: true }).select("-userId");
+    console.log("fetched profiles", profiles);
 
     return NextResponse.json(
       {
