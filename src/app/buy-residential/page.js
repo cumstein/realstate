@@ -4,7 +4,7 @@ const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://realstate-cumstein.vercel.app";
 
 async function BuyResidentials({ searchParams }) {
-  const res = await fetch(`${API_URL}/api/profile`, {
+  const res = await fetch(API_URL + "/api/profile", {
     cache: "no-store",
   });
   const data = await res.json();
