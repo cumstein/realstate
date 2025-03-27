@@ -1,10 +1,12 @@
 import BuyResidentialsPage from "@/template/BuyResidentialsPage";
 import { getProfiles } from "@/utils/getProfiles";
 
+export const dynamic = "force-dynamic";
+
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://realstate-cumstein.vercel.app";
 
-async function BuyResidentials({ searchParams}) {
+async function BuyResidentials({ searchParams }) {
   const profiles = await getProfiles();
   if (!profiles) {
     return { notFound: true };
