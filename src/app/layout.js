@@ -4,7 +4,7 @@ import { yekan } from "@/utils/fonts";
 import "./globals.css";
 
 export const metadata = {
-  title: "املاک سایت",
+  title: "سایت املاک",
   description: "سایت خرید و فروش املاک",
   icons: { icon: "./favicon.ico" },
 };
