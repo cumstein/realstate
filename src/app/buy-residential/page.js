@@ -1,18 +1,16 @@
 import BuyResidentialsPage from "@/template/BuyResidentialsPage";
+import { getProfiles } from "@/utils/getProfiles";
 
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "https://realstate-cumstein.vercel.app";
 
-async function BuyResidentials({ searchParams }) {
-  const res = await fetch(API_URL + "/api/profile", {
-    cache: "no-store",
-  });
-  const data = await res.json();
-  console.log("fetched data", data);
+async function BuyResidentials({ searchParams}) {
+  const profiles = await getProfiles();
+  if (!profiles) {
+    return { notFound: true };
+  }
 
-  if (data.error) return <h3>مشکلی پیش آمده است</h3>;
-
-  let finalData = data.data;
+  let finalData = profiles.data;
   if (searchParams.category) {
     finalData = finalData.filter((i) => i.category === searchParams.category);
   }
